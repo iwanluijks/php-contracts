@@ -15,7 +15,7 @@
             "/tests/"
         ],
         "psr-4": {
-            "IwanLuijks\\PhpContracts\\src\\": ""
+            "IwanLuijks\\PhpContracts\\": "src\\"
         }
     }
 }
