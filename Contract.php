@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace IwanLuijks\PhpContracts;
 
+use LogicException;
+
 class Contract
 {
     private string $name;
@@ -13,7 +15,7 @@ class Contract
                 && strpos($name, ' SHOULD NOT ') === false && strpos($name, ' SHOULD ') === false
                 && strpos($name, ' NOT HAS TO ') === false && strpos($name, ' HAS TO ') === false
                 && strpos($name, ' NOT HAVE TO ') === false && strpos($name, ' HAVE TO ') === false) {
-            throw new \LogicException('A contract name requires a clear indication of what it needs. Include one of the'
+            throw new LogicException('A contract name requires a clear indication of what it needs. Include one of the'
                     . ' following keywords herefor: MUST, MUST NOT, SHOULD, SHOULD NOT, HAS TO, NOT HAS TO, HAVE TO, NOT HAVE TO.');
         }
 
@@ -26,12 +28,14 @@ class Contract
      * @param string $message
      * @param mixed... $messageVars
      */
-    public function expects(bool $expression, string $message = 'Got an unexpected value.', ...$messageVars): void
+    public function expects(bool $expression, string $message = 'Got an unexpected value.', ...$messageVars): self
     {
         if ($expression !== true) {
             $traceInfoAsString = $this->gatherTraceInfoAsString();
             throw new ExpectationFailedException(vsprintf($message, $messageVars).' '.$traceInfoAsString);
         }
+
+        return $this;
     }
 
     /**
@@ -40,12 +44,14 @@ class Contract
      * @param string $message
      * @param mixed... $messageVars
      */
-    public function requires(bool $expression, string $message = 'Program requirement not adhered.', ...$messageVars): void
+    public function requires(bool $expression, string $message = 'Program requirement not adhered.', ...$messageVars): self
     {
         if ($expression !== true) {
             $traceInfoAsString = $this->gatherTraceInfoAsString();
             throw new RequirementFailedException(vsprintf($message, $messageVars).' '.$traceInfoAsString);
         }
+
+        return $this;
     }
 
     /**

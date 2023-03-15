@@ -4,7 +4,7 @@
     "authors": [
         {
             "name": "Iwan Luijks",
-            "email": "i.luijks@mexaplex.nl"
+            "email": "iwanluijks@gmail.com"
         }
     ],
     "require": {
@@ -15,9 +15,10 @@
             "/Tests/"
         ],
         "files": [
-          "functions.php"
+            "functions.php"
         ],
-        "psr-4": { "IwanLuijks\\PhpContracts": "" }
-    },
-    "minimum-stability": "dev"
+        "psr-4": {
+            "IwanLuijks\\PhpContracts": ""
+        }
+    }
 }

@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace IwanLuijks\PhpContracts;
 
-class RequirementFailedException extends \InvalidArgumentException
+use InvalidArgumentException;
+
+class RequirementFailedException extends InvalidArgumentException
 {
 }
