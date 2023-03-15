@@ -14,9 +14,6 @@
         "exclude-from-classmap": [
             "/Tests/"
         ],
-        "files": [
-            "functions.php"
-        ],
         "psr-4": {
             "IwanLuijks\\PhpContracts\\": ""
         }
