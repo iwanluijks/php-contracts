@@ -12,10 +12,10 @@
     },
     "autoload": {
         "exclude-from-classmap": [
-            "/Tests/"
+            "/tests/"
         ],
         "psr-4": {
-            "IwanLuijks\\PhpContracts\\": ""
+            "IwanLuijks\\PhpContracts\\src\\": ""
         }
     }
 }
