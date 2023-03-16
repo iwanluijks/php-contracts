@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace IwanLuijks\PhpContracts;
 
+use IwanLuijks\PhpContracts\Exceptions\ExpectationFailedException;
+use IwanLuijks\PhpContracts\Exceptions\RequirementFailedException;
 use LogicException;
 
 class Contract

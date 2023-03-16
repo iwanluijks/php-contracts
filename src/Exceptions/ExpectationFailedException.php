@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace IwanLuijks\PhpContracts;
+namespace IwanLuijks\PhpContracts\Exceptions;
 
 use UnexpectedValueException;
 
